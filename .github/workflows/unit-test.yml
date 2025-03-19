@@ -1,1 +1,58 @@
 
+name: Angular Node.js CI/CD
+
+on:
+  push:
+    branches:
+      - feature1  # Runs workflow on push to 'feature1' branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Lint the Angular project
+      - name: Run Linting
+        run: npm run lint
+
+      # Step 5: Run Unit Tests
+      - name: Run Unit Tests
+        run: npm test -- --watch=false --browsers=ChromeHeadless
+
+      # Step 6: Build the Angular project
+      - name: Build Angular App
+        run: npm run build -- --configuration=production
+
+      # Step 7: Archive Build Artifacts (Optional, for deployment)
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: angular-build
+          path: dist/
+
+      # Step 8: Set up Node.js Backend (if applicable)
+      - name: Set up Node.js Backend
+        run: |
+          cd backend
+          npm install
+
+      # Step 9: Run Backend Tests
+      - name: Run Backend Tests
+        run: |
+          cd backend
+          npm test
