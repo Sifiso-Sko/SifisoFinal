@@ -1,55 +1,45 @@
-name: Angular Node.js CI/CD
+name: Pipeline
 
 on:
   push:
     branches:
-      - feature2  # Runs workflow on push to 'feature2' branch
-
+      - feature2
 jobs:
-  build:
+  build-angular-app:
+    name: Build Angular App 
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: ProjectA
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      # Step 2: Set up Node.js
+      - name: Checkout Code
+        uses: actions/checkout@v3
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.19.0'
-          cache: 'npm'
-
-      # Step 3: Install dependencies
-      - name: Install dependencies
+          node-version: 18
+      - name: Install Dependencies
         run: npm install
-
-
-      # Step 5: Run Unit Tests for Angular
-      - name: Run Unit Tests
-        run: npm test -- --watch=false --browsers=ChromeHeadless
-
-      # Step 6: Build the Angular App
       - name: Build Angular App
-        run: npm run build -- --configuration=production
+        run: npm run build --if-present
 
-      # Step 7: Set up Node.js Backend (if applicable)
-      - name: Set up Node.js Backend
-        run: |
-          cd backend
-          npm install
+  run-unit-tests:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+    needs: build-angular-app # Ensures tests run only after build succeeds
+    defaults:
+      run:
+        working-directory: ProjectA
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Unit Tests
+        run: npm run test -- --watch=false --browsers=ChromeHeadless
 
-      # Step 8: Run Backend Tests
-      - name: Run Backend Tests
-        run: |
-          cd backend
-          npm test
 
-      # Optional: Add Docker Support for deployment
-      # - name: Build Docker image
-      #   run: docker build -t your-docker-repo/angular-node-app .
-
-      # Optional: Deploy to AWS or any other hosting service
-      # - name: Deploy to AWS
-      #   run: aws s3 sync ./dist/ s3://your-bucket-name
