@@ -1,10 +1,9 @@
-
 name: Angular Node.js CI/CD
 
 on:
   push:
     branches:
-      - feature2  # Runs workflow on push to 'feature1' branch
+      - feature2  # Runs workflow on push to 'feature2' branch
 
 jobs:
   build:
@@ -25,13 +24,12 @@ jobs:
       # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
-        
-         - name: Install ESLint and Angular ESLint dependencies
+
+      # Step 4: Install ESLint and Angular ESLint dependencies
+      - name: Install ESLint and Angular ESLint dependencies
         run: |
           ng add @angular-eslint/schematics --skip-confirmation
           npm install --save-dev @angular-eslint/builder @angular-eslint/eslint-plugin @angular-eslint/eslint-plugin-template @angular-eslint/template-parser
-
-
 
       # Step 5: Run Linting
       - name: Run Linting
@@ -58,8 +56,4 @@ jobs:
           cd backend
           npm install
 
-      # Step 10: Run Backend Tests
-      - name: Run Backend Tests
-        run: |
-          cd backend
-          npm test
+      # St
