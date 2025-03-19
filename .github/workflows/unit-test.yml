@@ -25,35 +25,43 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Install ESLint and Angular ESLint dependencies
+      # Step 4: Install Angular CLI globally
+      - name: Install Angular CLI globally
+        run: npm install -g @angular/cli
+
+      # Step 5: Install ESLint and Angular ESLint dependencies
       - name: Install ESLint and Angular ESLint dependencies
         run: |
           ng add @angular-eslint/schematics --skip-confirmation
           npm install --save-dev @angular-eslint/builder @angular-eslint/eslint-plugin @angular-eslint/eslint-plugin-template @angular-eslint/template-parser
 
-      # Step 5: Run Linting
+      # Step 6: Run Linting
       - name: Run Linting
         run: npm run lint
 
-      # Step 6: Run Unit Tests
+      # Step 7: Run Unit Tests
       - name: Run Unit Tests
         run: npm test -- --watch=false --browsers=ChromeHeadless
 
-      # Step 7: Build the Angular project
+      # Step 8: Build the Angular project
       - name: Build Angular App
         run: npm run build -- --configuration=production
 
-      # Step 8: Archive Build Artifacts (Optional, for deployment)
+      # Step 9: Archive Build Artifacts (Optional, for deployment)
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: angular-build
           path: dist/
 
-      # Step 9: Set up Node.js Backend (if applicable)
+      # Step 10: Set up Node.js Backend (if applicable)
       - name: Set up Node.js Backend
         run: |
           cd backend
           npm install
 
-      # St
+      # Step 11: Run Backend Tests
+      - name: Run Backend Tests
+        run: |
+          cd backend
+          npm test
