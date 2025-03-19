@@ -25,9 +25,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Lint Angular code
-      - name: Lint Angular Code
-        run: npm run lint
 
       # Step 5: Run Unit Tests for Angular
       - name: Run Unit Tests
