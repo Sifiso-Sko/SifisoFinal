@@ -3,7 +3,7 @@ name: Angular Node.js CI/CD
 on:
   push:
     branches:
-      - feature2  # Runs workflow on push to 'feature2' branch
+      - Sifiso-Sko-patch-2  # Runs workflow on push to 'feature2' branch
 
 jobs:
   build:
