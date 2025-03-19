@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "ng lint"  // Add the lint script
   },
   "private": true,
   "dependencies": {
@@ -36,6 +37,11 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.6.2"
+    "typescript": "~5.6.2",
+    "@angular-eslint/builder": "^12.0.0",  // Added ESLint builder for linting
+    "@angular-eslint/eslint-plugin": "^12.0.0",  // Added ESLint plugin for Angular
+    "@angular-eslint/eslint-plugin-template": "^12.0.0",  // Added plugin for templates
+    "@angular-eslint/schematics": "^12.0.0",  // Added Angular ESLint schematics
+    "eslint": "^7.30.0"  // Ensure ESLint is installed
   }
 }
