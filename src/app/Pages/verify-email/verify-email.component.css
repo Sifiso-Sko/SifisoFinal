@@ -1,0 +1,120 @@
+body {
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.container {
+  position: relative;
+  width: 420px;
+  text-align: center;
+  border-radius: 80px;
+  height: 500px;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.35);
+  background-color:#EAEAEA;
+}
+
+ /* .container {
+  width: 420px;
+  background-color:rgba(19, 59, 238, 0.4);
+  background-color:#EAEAEA;
+  border: 2px solid rgba(255, 255, 255, 02);
+  backdrop-filter: blur(20px);
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px 40px;
+  
+  mask: radial-gradient(60% 70px at top,#0000 100%,#000);
+}  */
+
+.title {
+  font-family: 'Krona One', sans-serif;
+  font-size: 15px;
+  color: #000;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #000;
+  font-family: 'Krona One', sans-serif;
+  margin-bottom: 20px;
+}
+
+.otp-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.otp-box {
+  width: 37px;
+  height: 33px;
+  background: rgba(100, 100, 100, 0.35);
+  border: none;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.resend {
+  font-size: 12px;
+  font-family: 'Krona One', sans-serif;
+  cursor: pointer;
+  color: #000;
+  margin-bottom: 20px;
+
+}
+a:hover{
+  background-color:#146edc;
+  color:#fff;
+  border-radius: 30px;
+
+}
+.verify-btn:hover{
+  background-color:#146edc;
+  color:#fff;
+ 
+  
+
+}
+
+.verify-btn {
+  /* width: 79px;
+  height: 30px; */
+  width: 100px;
+  height: 40px;
+  background: #470A91;
+  color: white;
+  font-size: 16px;
+  font-family: 'Krona One', sans-serif;
+  border-radius: 28px;
+  border: none;
+  cursor: pointer;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+/* Frame 18 */
+
+
+
+.image-container {
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 0, 0, 0.74);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
+  margin: 20px auto;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+}
+

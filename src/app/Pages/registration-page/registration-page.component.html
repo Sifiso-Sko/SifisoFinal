@@ -1,0 +1,90 @@
+<body>
+  <div class="reg_wrapper">      
+  <div class="information">
+      <h2>Welcome to AlgoBot! </h2>
+      <p class="moto">Unlock Your Trading Potential</p>
+      <p class="info">Why trade with AlgoBot? </p>
+      <p class="bullets"> • Real-Time Market Insights: Stay ahead with live updates.</p>
+      <p class="bullets"> • Advanced Tools: Trade smarter with state-of-the-art analytics</p>
+      <p class="bullets"> • Secure & Reliable: Your safety is our top priority</p>
+ 
+    <p class="infoj">Join thousands of traders leveraging cutting-edge tools to stay ahead in the market.</p>
+ 
+    <div class="register-link">
+      <p>Already have an Account? <a routerLink="/Login" href="/Login">Login</a></p>
+  </div>
+ 
+  </div>
+ 
+<div class="wrapper">
+ 
+  <p class="sign_up_text">sign up</p>
+  <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()" >
+ 
+      <div class="input-box">
+        <label for="firstName">First Name</label>
+        <input type="text" formControlName="firstName" required>
+      </div>
+   
+      <span class="span" *ngIf="signUpForm.controls['firstName'].errors?.['required'] && signUpForm.controls['firstName'].touched">
+        *required
+      </span>
+      <span class="span" *ngIf="signUpForm.controls['firstName'].errors?.['minlength']">
+        Min length 3
+      </span>
+      <span class="span" *ngIf="signUpForm.controls['firstName'].errors?.['pattern']">
+        No special characters or numbers
+      </span>
+   
+      <div class="input-box">
+        <label for="lastName">Last Name</label>
+        <input class="lastName" type="text" formControlName="lastName" required>
+      </div>
+   
+      <span class="span" *ngIf="signUpForm.controls['lastName'].errors?.['required'] && signUpForm.controls['lastName'].touched">
+        *required
+      </span>
+      <span class="span" *ngIf="signUpForm.controls['lastName'].errors?.['minlength']">
+        Min length 3
+      </span>
+      <span class="span" *ngIf="signUpForm.controls['lastName'].errors?.['pattern']">
+        No special characters or numbers
+      </span>
+   
+<div class="input-box">
+  <label for="Email">Email Address</label>
+    <input type="text" formControlName="email"  placeholder="email" required>
+ 
+    </div>
+ 
+    <span class="span" *ngIf="signUpForm.controls['email'].errors?.['required'] && signUpForm.controls['email'].touched">*required</span>
+    <span class="span" *ngIf="signUpForm.controls['email'].errors?.['pattern'] ">Enter valid email </span>
+ 
+  <div class="input-box">
+    <label for="Password">Password</label>
+      <input type="password" formControlName="password"  placeholder="password" required>
+      <i class='bx bxs-lock-alt'></i>
+    </div>
+   
+    <span class="span" *ngIf="signUpForm.controls['password'].errors?.['required'] && signUpForm.controls['password'].touched">*required </span>
+    <span class="span" *ngIf="signUpForm.controls['confirmPassword'].errors?.['minlength'] ">Min length 8 characters </span>
+    <span class="span" *ngIf="signUpForm.controls['password'].errors?.['pattern'] ">Enter strong password </span>
+ 
+    <div class="input-box">
+      <label for="ConfirmPassword">Confirm Password</label>
+        <input type="password"  formControlName="confirmPassword"  placeholder="confirmPassword" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+ 
+      <span class="span" *ngIf="signUpForm.hasError('passwordsMismatch') && signUpForm.touched">Password does not match </span>
+     
+<div class="remember-forget">        
+ 
+</div><br>
+<button type="submit" class="btn" [disabled]="signUpForm.invalid">sign up</button>
+ 
+</form>
+</div>
+ 
+</div>
+</body>

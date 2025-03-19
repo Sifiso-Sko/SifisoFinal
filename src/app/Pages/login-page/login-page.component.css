@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Krona+One:wght@300;400;500;600;700;800;900&display=swap");
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+ 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+ 
+.sign-in {
+    color: #000;
+    font-family: 'Krona One';
+    text-align: center;
+    margin-bottom: 20px;
+}
+ 
+.social-container {
+    margin: 10px;
+    text-align: center;
+    width: 100%;
+    padding: 5% 0;
+}
+ 
+.social-container a {
+    border: 1px solid #DDD;
+    border-radius: 10%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;
+}
+ 
+.wrapper {
+    width: 320px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+ 
+.input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+ 
+.input-box label {
+    color: #000;
+    font-family: 'Krona One';
+    display: block;
+    margin-bottom: 5px;
+}
+ 
+.input-box input {
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 20px;
+    outline: none;
+}
+ 
+.input-box input::placeholder {
+    color: #aaa;
+}
+ 
+.btn {
+    width: 100%;
+    height: 45px;
+    background-color: #8423FC;
+    border: none;
+    border-radius: 22.5px;
+    color: #fff;
+    font-family: 'Krona One';
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+ 
+.btn:hover {
+  background-color: #0b61cb;
+  color: #fff;
+}
+ 
+.btn:disabled {
+  cursor: default;
+  background-color: #cccccc;
+}
+ 
+.btn:not(:disabled) {
+  background-color: #8423FC;
+}
+ 
+.register-link {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+}
+ 
+.register-link a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+}
+ 
+.register-link a:hover {
+    text-decoration: underline;
+}
+ 
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}

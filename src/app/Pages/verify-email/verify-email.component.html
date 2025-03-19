@@ -1,0 +1,31 @@
+
+<body>
+<div class="container p-3">
+  <div class="title">
+    <h1 class="title>">Verify Email</h1>
+  </div>
+  <div class="image-container>">
+    <img class="image-container img"src="assets/email.png" alt="emailVerify" />
+  </div>
+
+  <div class="body">
+    <div class="subtitle">
+      <p>Enter the OTP sent to your email</p>
+    </div>
+    <div class="otp-container" >
+      <input  class="otp-box" type="text"maxlength="1"[(ngModel)]="otp1"  (input)="moveFocus($event,1)" />
+      <input class="otp-box" type="text" maxlength="1"[(ngModel)]="otp2"  (input)="moveFocus($event,2)"/>
+      <input class="otp-box" type="text" maxlength="1"[(ngModel)]="otp3"  (input)="moveFocus($event,3)"/>
+      <input class="otp-box" type="text" maxlength="1"[(ngModel)]="otp4"  (input)="moveFocus($event,4)"/>
+      <input class="otp-box" type="text" maxlength="1"[(ngModel)]="otp5"  (input)="moveFocus($event,5)"/>
+      <input class="otp-box" type="text" maxlength="1"[(ngModel)]="otp6"  (input)="moveFocus($event,6)"/>
+    </div>
+    
+    <div class="resend">
+      <button class="verify-btn" (click)="onResend()" >resend</button>
+    </div>
+    <button class="verify-btn" (click)="onVerify(otp1,otp2,otp3,otp4,otp5,otp6)">Verify</button>
+  </div>
+
+</div>
+</body>

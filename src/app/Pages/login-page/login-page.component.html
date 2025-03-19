@@ -1,0 +1,58 @@
+
+<body>
+  
+  <h1 class="sign-in">Login</h1>
+ 
+          <div class="wrapper">
+            <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+         
+              <!-- Email Input -->
+              <div class="input-box">
+                <label for="email">Email</label>
+                <input
+                  type="text"
+                  name="email"
+                  [(ngModel)]="email"
+                  required
+                  #emailField="ngModel"
+                />
+                <i class='bx bxs-user'></i>
+                <div *ngIf="emailField.invalid && emailField.touched" class="error">
+                  Email is required
+                </div>
+              </div>
+         
+              <!-- Password Input -->
+              <div class="input-box">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  [(ngModel)]="password"
+                  required
+                  #passwordField="ngModel"
+                />
+                <i class='bx bxs-lock-alt'></i>
+                <div *ngIf="passwordField.invalid && passwordField.touched" class="error">
+                  Password is required
+                </div>
+              </div>
+         
+              <div class="remember-forget">
+                <div class="register-link">
+                  <a routerLink="/forgot-password" href="/forgot-password">Forgot password?</a>
+                </div>
+              </div>
+              <br />
+         
+             <!-- Submit Button -->
+             <button type="submit" class="btn" [disabled]="loginForm.invalid">Login</button>
+         
+              <div class="register-link">
+                <p>Don't have an account? <a routerLink="/Registration" href="/Registration">SignUp</a></p>
+              </div>
+         
+            </form>
+          </div>
+        </body>
+         

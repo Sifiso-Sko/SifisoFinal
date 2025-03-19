@@ -1,0 +1,193 @@
+* {
+    font-family: "Krona One", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: white;
+  }
+  
+  .container1 {
+    display: flex;
+    flex-direction: column;  /* Stack h1 and p elements vertically */
+    justify-content: center; /* Center content horizontally */
+    align-items: center;     /* Center content vertically */
+    font-size: 14px;
+    line-height: 2.5;
+    padding: 0 10px;
+    margin: 50px auto; /* Center container1 horizontally with margin */
+    width: 90%; /* Set width to ensure the container fits within the screen */
+    max-width: 1200px; /* Optional max-width for large screens */
+  }
+  
+  .container1 h1 {
+    font-size: 30px;
+    margin: 10px 0;
+    text-align: center; /* Ensure the header is centered */
+  }
+  
+  .container1 p {
+    font-size: 14px;
+    line-height: 2.5;
+    text-align: center; /* Center-align the paragraph */
+    padding: 0 10px;
+  }
+  
+  
+  .container {
+    display: flex;
+    justify-content: center; /* Center widgets */
+    align-items: flex-start; /* Align widgets at the top */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin: 50px auto; /* Center container */
+    width: 90%; /* Container spans 90% of the screen */
+    max-width: 1200px; /* Set max width for larger screens */
+    gap: 20px; /* Add spacing between widgets */
+  }
+  
+  .widget1 {
+    width: 32%; /* Adjusted width for uniformity */
+    text-align: center; /* Center-align content inside widgets */
+    background-color: #7664fe;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px 0px; /* Top/bottom margin for spacing */
+  }
+  .widget1 img {
+    width: 100%; /* Stretch image width */
+    height: 220px; /* Uniform height */
+    object-fit: contain; /* Ensure proper scaling without clipping */
+    margin-bottom: 10px; /* Spacing below the image */
+  }
+  .widget1 h2 {
+    font-size: 30px;
+    margin: 10px 0;
+  }
+  .widget1 p {
+    font-size: 14px;
+    line-height: 2.5;
+    padding: 0 10px; /* Add padding for readability */
+  }
+  
+  
+  
+  
+  .widget2 {
+    width: 32%; /* Adjusted width for uniformity */
+    text-align: center; /* Center-align content inside widgets */
+    background-color: #9536ed;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px 0px; /* Top/bottom margin for spacing */
+  }
+  .widget2 img {
+    width: 100%; /* Stretch image width */
+    height: 220px; /* Uniform height */
+    object-fit: contain; /* Ensure proper scaling without clipping */
+    margin-bottom: 10px; /* Spacing below the image */
+  }
+  .widget2 h2 {
+    font-size: 30px;
+    margin: 10px 0;
+  }
+  .widget2 p {
+    font-size: 14px;
+    line-height: 2.5;
+    padding: 0 10px; /* Add padding for readability */
+  }
+  
+  
+  
+  
+  
+  .widget3 {
+    width: 32%; /* Adjusted width for uniformity */
+    text-align: center; /* Center-align content inside widgets */
+    background-color: #7849f9;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px 0px; /* Top/bottom margin for spacing */
+  }
+  .widget3 img {
+    width: 100%; /* Stretch image width */
+    height: 220px; /* Uniform height */
+    object-fit: contain; /* Ensure proper scaling without clipping */
+    margin-bottom: 10px; /* Spacing below the image */
+  }
+  .widget3 h2 {
+    font-size: 30px;
+    margin: 10px 0;
+  }
+  .widget3 p {
+    font-size: 14px;
+    line-height: 2.5;
+    padding: 0 10px; /* Add padding for readability */
+  }
+  
+  /* Adding keyframes for fade-in and slide-up effect */
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* Start slightly lower */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* End in the normal position */
+    }
+  }
+  
+  /* Apply animation to widgets */
+  .widget1, .widget2, .widget3 {
+    width: 32%;
+    text-align: center;
+    background-color: #b041ff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px 0px;
+    animation: fadeInUp 0.8s ease-out forwards; /* Fade-in and slide-up animation */
+    opacity: 0; /* Initial state as invisible */
+    animation-delay: 0.3s; /* Add a slight delay for the effect */
+  }
+  
+  .widget2 {
+    background-color: #8a24d8;
+    animation-delay: 0.6s; /* Stagger the delay */
+  }
+  
+  .widget3 {
+    background-color: #753cf1;
+    animation-delay: 0.9s; /* Stagger the delay */
+  }
+  
+  .widget1 img, .widget2 img, .widget3 img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+  
+  .widget1 h2, .widget2 h2, .widget3 h2 {
+    font-size: 30px;
+    margin: 10px 0;
+  }
+  
+  .widget1 p, .widget2 p, .widget3 p {
+    font-size: 14px;
+    line-height: 2.5;
+    padding: 0 10px;
+  }
+  
+  
+  /* Hover animation */
+  .widget1:hover, .widget2:hover, .widget3:hover {
+    transform: translateY(-10px); /* Move the widget upwards */
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.3); /* Increase shadow for 3D effect */
+  }
