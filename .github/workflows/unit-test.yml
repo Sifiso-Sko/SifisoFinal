@@ -25,6 +25,12 @@ jobs:
       # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
+        
+         - name: Install ESLint and Angular ESLint dependencies
+        run: |
+          ng add @angular-eslint/schematics --skip-confirmation
+          npm install --save-dev @angular-eslint/builder @angular-eslint/eslint-plugin @angular-eslint/eslint-plugin-template @angular-eslint/template-parser
+
 
 
       # Step 5: Run Linting
